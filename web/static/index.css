@@ -348,6 +348,15 @@ nav {
   text-align: right;
 }
 
+@media (display-mode: standalone), (display-mode: fullscreen) {
+  .nostandalone {
+    /* When installed as a standalone app, iOS opens same-site links inside
+     * the app itself (even with _blank), with no obvious way to return.
+     * To avoid confusion, we hide these links when in standalone mode. */
+    display: none;
+  }
+}
+
 a,
 .download button {
   display: inline-block;
